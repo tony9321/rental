@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && sleep 5 && npx copyfiles -u 1 my-worker/serviceWorker.js build/",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "npm run build && wrangler pages deploy ./build",
@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "copyfiles": "^2.4.1",
     "wrangler": "^3.41.0"
   }
 }
